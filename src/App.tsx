@@ -4,9 +4,8 @@ import styled from "styled-components";
 function App() {
   return (
     <div>
-      <AppHeader>Template App Header</AppHeader>
+      <AppHeader data-test="header">Template App Header</AppHeader>
       <BodyDiv>
-        <h1>Testing Cypress Header</h1>
         <Button
           onClick={() => {
             console.log("Clicked");
