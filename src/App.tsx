@@ -6,6 +6,7 @@ function App() {
     <div>
       <AppHeader>Template App Header</AppHeader>
       <BodyDiv>
+        <h1>Testing Cypress Header</h1>
         <Button
           onClick={() => {
             console.log("Clicked");
