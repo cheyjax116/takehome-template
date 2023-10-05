@@ -5,6 +5,7 @@ import { TestComponent } from "./TestComponent";
 import reportWebVitals from "./reportWebVitals";
 import { createGlobalStyle } from "styled-components";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { RecoilRoot } from "recoil";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -18,11 +19,12 @@ const GlobalStyle = createGlobalStyle`
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; 
+  background-color: #e3e3e3;
 }
 `;
 
 root.render(
-  <React.StrictMode>
+  <RecoilRoot>
     <GlobalStyle />
     <BrowserRouter>
       <Routes>
@@ -30,7 +32,7 @@ root.render(
         <Route path="page-two" element={<TestComponent />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  </RecoilRoot>
 );
 
 // If you want to start measuring performance in your app, pass a function
