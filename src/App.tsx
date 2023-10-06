@@ -11,7 +11,10 @@ function App() {
     <MainDiv>
       <AppHeader data-test="header">Template App Header</AppHeader>
       <BodyDiv>
-        <Counter $count={counter}> {counter}</Counter>
+        <Counter data-test="counter" $count={counter}>
+          {" "}
+          {counter}
+        </Counter>
         <ButtonDiv>
           <Button
             onClick={() => {
