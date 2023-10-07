@@ -1,33 +1,29 @@
-import { RecoilRoot } from "recoil";
+import { RecoilRoot, selector, useRecoilValue } from "recoil";
 import App from "./App";
+import { countAtom } from "./atoms";
 
 describe("<App />", () => {
-  it("Verify Header  is present", () => {
+  beforeEach(() => {
     cy.mount(
       <RecoilRoot>
         <App />
       </RecoilRoot>
     );
+    cy.waitForReact(1000, "#root");
+  });
+  it("Verify Header  is present", () => {
     cy.get("[data-test=header]").should("exist");
   });
 
   it("Verify Div is present", () => {
-    cy.mount(
-      <RecoilRoot>
-        <App />
-      </RecoilRoot>
-    );
     cy.get("div").first().should("be.exist");
   });
   it("Verify State", () => {
-    cy.mount(
-      <RecoilRoot>
-        <App />
-      </RecoilRoot>
-    );
-    // cy.getReact("[data-test=counter]");
-    // .its("key")
-    // .should("eq", "value"); // check state
+    // cy.get("[data-test=counter]");
+    cy.getReact("App").should("exist");
+    // cy.getReact("App", {
+    //   props: { "[data-test]": counter },
+    // }).getCurrentState();
   });
 
   // it("renders", () => {

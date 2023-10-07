@@ -1,4 +1,4 @@
-import React from "react";
+import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { TestComponent } from "./TestComponent";
@@ -24,15 +24,18 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 root.render(
-  <RecoilRoot>
-    <GlobalStyle />
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="page-two" element={<TestComponent />} />
-      </Routes>
-    </BrowserRouter>
-  </RecoilRoot>
+  <StrictMode>
+    <RecoilRoot>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="page-two" element={<TestComponent />} />
+        </Routes>
+      </BrowserRouter>
+    </RecoilRoot>
+  </StrictMode>
+  //  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

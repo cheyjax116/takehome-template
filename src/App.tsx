@@ -8,7 +8,7 @@ function App() {
   const [counter, setCounter] = useRecoilState(countAtom);
 
   return (
-    <MainDiv>
+    <MainDiv id="root">
       <AppHeader data-test="header">Template App Header</AppHeader>
       <BodyDiv>
         <Counter data-test="counter" $count={counter}>
